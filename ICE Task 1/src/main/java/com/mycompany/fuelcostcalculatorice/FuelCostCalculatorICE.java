@@ -5,15 +5,20 @@ package com.mycompany.fuelcostcalculatorice;
  *
  * @ST10152169, Ryan Samuels
  */
-import java.util.Scanner;   // Shaik(2026) rules that importing scanner allows for user to add input 
+// Shaik(2026) rules that importing scanner allows for user to add input
+import java.util.Scanner;   
 
-import java.text.DecimalFormat; //Decimal format import taught by Lambda(2023)
+//Decimal format import taught by Lambda(2023)
+import java.text.DecimalFormat; 
 
-import javax.swing.JOptionPane; //JOption Pane (Farrel,2023,pg 27)
+//JOption Pane (Farrel,2023,pg 27)
+import javax.swing.JOptionPane; 
 
-public class FuelCostCalculatorICE {   // Shaik (2026) states that a public class serves as a blueprint for the program
-
-    public static void main(String[] args) {  // Shaik (2026) implies that this line is known as the method signiture for program
+// Shaik (2026) states that a public class serves as a blueprint for the program
+public class FuelCostCalculatorICE {   
+    
+ // Shaik (2026) implies that this line is known as the method signiture for program
+    public static void main(String[] args) {  
        
       //Main Method (Farrel,2023,pg 59)
       String userInputs;  
@@ -28,11 +33,15 @@ public class FuelCostCalculatorICE {   // Shaik (2026) states that a public clas
         System.out.print("Enter price per litre (R): ");
       fuelPrice =inputDevice.nextDouble();
        
-        System.out.println("Distance: " + distance +"km" + " ;fuel efficiency: " + fuelEfficiency +"km/litre " + ";fuel price per litre:R " + fuelPrice);      
+      //Closing Scanner
+      inputDevice.close();
+        
+      System.out.println("Distance: " + distance +"km" + " ;fuel efficiency: " + fuelEfficiency +"km/litre " + ";fuel price per litre:R " + fuelPrice);      
         
         DecimalFormat fmt1 =new DecimalFormat("#.##");
         
-       String fuelNeededCalculation;   //Arithmetic method for "fuelNeededCalculation" credited to (Farrel,2023)
+       //Arithmetic method for "fuelNeededCalculation" credited to (Farrel,2023)    
+       String fuelNeededCalculation;  
        
         
         double fuelNeeded;
@@ -41,7 +50,8 @@ public class FuelCostCalculatorICE {   // Shaik (2026) states that a public clas
         fuelNeeded=average;
         System.out.print(fmt1.format(average) + " Litres" + " is how much fuel is needed");
         
-       String TotalCostCalculation; // Arithmetic method for "TotalCostCalculation" credited to (Farrel,2023)        
+       // Arithmetic method for "TotalCostCalculation" credited to (Farrel,2023) 
+       String TotalCostCalculation;         
         
         
         double totalCost;
@@ -49,11 +59,13 @@ public class FuelCostCalculatorICE {   // Shaik (2026) states that a public clas
         
         System.out.println(" and the total Cost for trip will then be " + "R"+ fmt1.format(totalCost));
         
-        System.out.println("R" +fmt1.format(totalCost)); //(lambda,2023)
+        //(lambda,2023)
+        System.out.println("R" +fmt1.format(totalCost)); 
         
-        JOptionPane.showMessageDialog(null,"Total Cost for Trip: R" + fmt1.format(totalCost)); //(Farrel,2023,pg27)
-    }       
-    
+        //(Farrel,2023,pg27)
+        JOptionPane.showMessageDialog(null,"Total Cost for Trip: R" + fmt1.format(totalCost)); 
+        
+    }          
 }
 
 
